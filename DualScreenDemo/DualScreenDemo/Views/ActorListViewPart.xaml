@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DualScreenDemo.Views.ActorListViewPart">
+    <ContentView.Resources>
+        <DataTemplate x:Key="ActorItemTemplate">
+            <ImageCell Text="{Binding Name, Mode=OneTime}"
+                       Detail="{Binding Roles, Mode=OneTime}"
+                       ImageSource="{Binding Picture}"
+                       TextColor="Black"
+                       DetailColor="DarkGray" />
+        </DataTemplate>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <ListView ItemsSource="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  Visual="Material"
+                  ItemTemplate="{StaticResource ActorItemTemplate}" />
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:controls="clr-namespace:DualScreenDemo.Controls"
+                   xmlns:views="clr-namespace:DualScreenDemo.Views"
+                   x:Class="DualScreenDemo.Pages.ActorDetailsPage"
+                   Title="{Binding Name}">
+
+    <controls:BasePage.Content>
+        <views:ActorDetailsViewPart />
+    </controls:BasePage.Content>
+
+</controls:BasePage>

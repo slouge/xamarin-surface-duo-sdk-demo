@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DualScreenDemo.Views.ActorDetailsViewPart">
+    <ContentView.Content>
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!--ACTOR PICTURE-->
+            <Image Source="{Binding Picture}" />
+
+            <!--ACTOR INFORMATIONS-->
+            <StackLayout Grid.Column="1">
+                <Label Text="{Binding Name}"
+                       Style="{DynamicResource TitleStyle}"
+                       IsVisible="{Binding IsSpanned}" />
+                
+                <Label Text="{Binding Roles, StringFormat='Métiers : {0}'}"
+                       Style="{DynamicResource CaptionStyle}" />
+               
+                <Label Text="{Binding AgeString, StringFormat='{Naissance : {0}'}"
+                       Style="{DynamicResource CaptionStyle}" />
+
+                <Label Text="{Binding BirthLocation, StringFormat='Lieu de naissance : {0}'}"
+                       Style="{DynamicResource CaptionStyle}" />
+
+            </StackLayout>
+
+        </Grid>
+
+
+    </ContentView.Content>
+</ContentView>
