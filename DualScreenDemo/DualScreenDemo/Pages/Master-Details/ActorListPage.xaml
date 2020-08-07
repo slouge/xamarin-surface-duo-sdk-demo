@@ -5,6 +5,7 @@
                    xmlns:controls="clr-namespace:DualScreenDemo.Controls"
                    xmlns:views="clr-namespace:DualScreenDemo.Views"
                    x:Class="DualScreenDemo.Pages.ActorListPage"
+                   BindingContext="{Binding ActorManagerViewModel, Source={StaticResource ViewModelLocator}}"
                    Title="Liste des acteurs">
 
     <ds:TwoPaneView x:Name="DualScreenView"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DualScreenDemo.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,24 +25,34 @@ namespace DualScreenDemo.Controls
         {
             base.OnAppearing();
             DualScreenInfo.Current.PropertyChanged += OnFormsWindowPropertyChanged;
+
+            if (BindingContext is DualScreenViewModelBase vm)
+            {
+                vm.ViewMode = DualScreenInfo.Current.SpanMode;
+                vm.OnAppearing();
+            }
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             DualScreenInfo.Current.PropertyChanged -= OnFormsWindowPropertyChanged;
+
+            if (BindingContext is DualScreenViewModelBase vm)
+            {
+                vm.OnDisappearing();
+            }
         }
 
         private void OnFormsWindowPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(DualScreenInfo.Current.SpanMode) || e.PropertyName == nameof(DualScreenInfo.Current.IsLandscape))
             {
-                OnSpanModeChanged(DualScreenInfo.Current.SpanMode);
+                if (BindingContext is DualScreenViewModelBase vm)
+                {
+                    vm.ViewMode = DualScreenInfo.Current.SpanMode;
+                }
             }
-        }
-
-        protected virtual void OnSpanModeChanged(TwoPaneViewMode mode)
-        {
         }
     }
 }

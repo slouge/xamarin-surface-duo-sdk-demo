@@ -19,12 +19,13 @@ namespace DualScreenDemo
             InitializeComponent();
 
             var navigation = new NavigationService();
-            navigation.RegisterPage(PageKeys.MainPage, typeof(ActorListPage));
+            navigation.RegisterPage(PageKeys.MainPage, typeof(MainPage));
+            navigation.RegisterPage(PageKeys.ActorsPage, typeof(ActorListPage));
             navigation.RegisterPage(PageKeys.DetailsPage, typeof(ActorDetailsPage));
 
             SimpleIoc.Default.Register<INavigationService>(() => navigation);
 
-            var firstPage = new NavigationPage(new ActorListPage(ViewModelLocator.MainViewModel));
+            var firstPage = new NavigationPage(new MainPage());
 
             navigation.Initialize(firstPage);
 

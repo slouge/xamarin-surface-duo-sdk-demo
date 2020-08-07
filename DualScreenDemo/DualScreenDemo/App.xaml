@@ -4,5 +4,6 @@
              x:Class="DualScreenDemo.App"
              xmlns:vm="clr-namespace:DualScreenDemo.ViewModels">
     <Application.Resources>
+        <vm:ViewModelLocator x:Key="ViewModelLocator" />
     </Application.Resources>
 </Application>
