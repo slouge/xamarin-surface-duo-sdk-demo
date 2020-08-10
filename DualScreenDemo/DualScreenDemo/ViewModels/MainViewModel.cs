@@ -33,6 +33,10 @@ namespace DualScreenDemo.ViewModels
                 case Samples.MasterDetails:
                     _navigationService.NavigateTo(PageKeys.ActorsPage);
                     break;
+
+                case Samples.ExtendedCanvas:
+                    _navigationService.NavigateTo(PageKeys.ExtendedCanvasPage);
+                    break;
             }
         }
     }

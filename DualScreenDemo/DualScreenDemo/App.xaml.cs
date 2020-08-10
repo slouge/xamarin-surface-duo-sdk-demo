@@ -18,10 +18,13 @@ namespace DualScreenDemo
         {
             InitializeComponent();
 
+            Device.SetFlags(new string[] { "Brush_Experimental" });
+
             var navigation = new NavigationService();
             navigation.RegisterPage(PageKeys.MainPage, typeof(MainPage));
             navigation.RegisterPage(PageKeys.ActorsPage, typeof(ActorListPage));
-            navigation.RegisterPage(PageKeys.DetailsPage, typeof(ActorDetailsPage));
+            navigation.RegisterPage(PageKeys.DetailsPage, typeof(ActorDetailsPage)); 
+            navigation.RegisterPage(PageKeys.ExtendedCanvasPage, typeof(ExtendedCanvasPage));
 
             SimpleIoc.Default.Register<INavigationService>(() => navigation);
 

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:BasePage  xmlns:controls="clr-namespace:DualScreenDemo.Controls"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="DualScreenDemo.Pages.ExtendedCanvasPage"
+                    BindingContext="{Binding ExtendedCanvasViewModel, Source={StaticResource ViewModelLocator}}"
+                    Title="Extended Canvas">
+    <controls:BasePage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+    </controls:BasePage.Resources>
+
+    <Grid ColumnSpacing="0"
+          Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding ColumnWidth}" />
+            <ColumnDefinition Width="{Binding ColumnWidth}" />
+            <ColumnDefinition Width="{Binding HindgeBoundWidth}" />
+            <ColumnDefinition Width="{Binding ColumnWidth}" />
+            <ColumnDefinition Width="{Binding ColumnWidth}" />
+            <ColumnDefinition Width="{Binding ColumnWidth}" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--HEADERS-->
+        <Label Text="Colonne 1" />
+        <Label Text="Colonne 2"
+               Grid.Column="1" />
+        <Label Text="Colonne 3"
+               Grid.Column="3" />
+        <Label Text="Colonne 4"
+               Grid.Column="4" />
+        <Label Text="Colonne 5"
+               Grid.Column="5" />
+
+        <!--COLUMNS ROW BACKGROUNDS-->
+        <BoxView BackgroundColor="LightBlue"
+                 Grid.Row="1" />
+        <BoxView BackgroundColor="LightCyan"
+                 Grid.Row="1"
+                 Grid.Column="1" />
+        <BoxView BackgroundColor="LightGreen"
+                 Grid.Row="1"
+                 Grid.Column="3" />
+        <BoxView BackgroundColor="LightSeaGreen"
+                 Grid.Row="1"
+                 Grid.Column="4" />
+        <BoxView BackgroundColor="LightGoldenrodYellow"
+                 Grid.Row="1"
+                 Grid.Column="5" />
+    </Grid>
+</controls:BasePage>

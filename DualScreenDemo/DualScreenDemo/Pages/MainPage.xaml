@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:constant="clr-namespace:DualScreenDemo.Contants"
+             xmlns:enums="clr-namespace:DualScreenDemo.Enums"
              x:Class="DualScreenDemo.Pages.MainPage"
              Title="Choisissez votre démo"
              BindingContext="{Binding MainViewModel, Source={StaticResource ViewModelLocator}}">
@@ -12,7 +12,12 @@
             <!--MASTER DETAILS-->
             <Button Text="Master-Details"
                     Command="{Binding ShowSampleCommand}"
-                    CommandParameter="{x:Static constant:Samples.MasterDetails}" />
+                    CommandParameter="{x:Static enums:Samples.MasterDetails}" />
+
+            <!--EXTENDED CANVAS-->
+            <Button Text="Extended Canvas"
+                    Command="{Binding ShowSampleCommand}"
+                    CommandParameter="{x:Static enums:Samples.ExtendedCanvas}" />
 
         </StackLayout>
     </ContentPage.Content>

@@ -11,6 +11,7 @@ namespace DualScreenDemo.ViewModels
         {
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ActorManagerViewModel>();
+            SimpleIoc.Default.Register<ExtendedCanvasViewModel>();
         }
 
         public MainViewModel MainViewModel
@@ -26,6 +27,14 @@ namespace DualScreenDemo.ViewModels
             get
             {
                 return SimpleIoc.Default.GetInstance<ActorManagerViewModel>();
+            }
+        }
+
+        public ExtendedCanvasViewModel ExtendedCanvasViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<ExtendedCanvasViewModel>();
             }
         }
     }
